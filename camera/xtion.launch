@@ -1,0 +1,13 @@
+<launch>
+
+	<node 
+	name="openni_launch" 
+	pkg="openni_launch"
+	type="openni_launch" 
+	output="screen">
+		<param name="rgb_camera_info_url" type="string" value="file:///home/paul/.ros/camera_info/camera.yaml" />
+
+	</node>
+
+
+</launch>
