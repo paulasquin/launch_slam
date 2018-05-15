@@ -1,0 +1,13 @@
+<launch>
+
+
+	<node pkg="gmapping" name="slam_gmapping" type="slam_gmapping" args="scan:=base_scan" output="screen">
+	
+		<remap from="scan" to="/buggy/scan"/>
+		<remap from="odom" to="/buggy/odom"/>
+		<param name="delta" value=""/>
+		<param name="map_update_interval" value="0.5"/>
+
+	</node>
+
+</launch>
