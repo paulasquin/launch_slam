@@ -1,0 +1,7 @@
+<launch>
+
+	<node pkg="rosbag" type="play" name="rosbag_play" args="PATH_TO_ROSBAG --clock"/>	
+
+	<node pkg="buggy" type="buggy_node.py" name="buggy_node" output="screen"/>
+
+</launch>

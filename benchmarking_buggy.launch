@@ -1,0 +1,8 @@
+<launch>
+	<include file="/home/paul/SLAM/rosbag_and_buggy.launch"/>
+	<include file="/home/paul/SLAM/cartographer/emox_cartographer_buggy.launch"/>
+	<include file="/home/paul/SLAM/gmapping/emox_gmapping_buggy.launch"/>
+	<include file="/home/paul/SLAM/hector/emox_hector_buggy.launch"/>
+	<!--include file="/home/paul/SLAM/rtabmap/emox_rtabmap_buggy.launch"/-->
+
+</launch>

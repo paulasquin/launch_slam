@@ -4,20 +4,25 @@
 		name="cartographer_node" 
 		pkg="cartographer_ros"
 		type="cartographer_node" 
-		args="-configuration_directory /home/paul/SLAM/cartographer -configuration_basename emox_2d.lua" 
-		output="screen">
-     	<remap from="scan" to="/buggy/scan" />
-     	<remap from="odom" to="/buggy/odom" />
-     	<remap from="tf" to="/buggy/tf" />
+		args="-configuration_directory /home/paul/SLAM/cartographer -configuration_basename emox_2d.lua">
 
+		<remap from="scan" to="/buggy/scan"/>
+		<remap from="odom" to="/buggy/odom"/>
+		<!--remap from="tf" to="/buggy/tf"/-->
+		<remap from="clock" to="/buggy/clock"/>
 	</node>
 
 	<node 
 		name="cartographer_occupancy_grid_node" 
 		pkg="cartographer_ros"
-		type="cartographer_occupancy_grid_node" />
+		type="cartographer_occupancy_grid_node"/>
 
-	<node name="rviz" pkg="rviz" type="rviz" required="true" args="-d /home/paul/SLAM/cartographer/emox_2d.rviz" />
+	<node name="rviz_cartographer" pkg="rviz" type="rviz" args="-d /home/paul/SLAM/cartographer/cartographer.rviz" />
 
-
+	<!-- node pkg="rosbag" type="play" name="player" output="screen" args="\-\-clock /media/data/SLAM/trajectoire4_4_buggy_3.bag -r 1">
+	<remap from="/buggy/scan" to="scan"/>
+	<remap from="/buggy/odom" to="odom"/>
+	</node-->
 </launch>
+
+

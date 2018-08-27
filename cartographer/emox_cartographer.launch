@@ -19,5 +19,6 @@
 
 	<node name="rviz" pkg="rviz" type="rviz" required="true" args="-d /home/paul/SLAM/cartographer/emox_2d.rviz" />
 
-
+<node pkg="rosbag" type="play" name="player" output="screen" args="--clock
+   /media/data/SLAM/trajectoire4_4_buggy_4.bag -r 1" />
 </launch>

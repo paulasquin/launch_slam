@@ -1,13 +1,16 @@
 <launch>
 
 
-	<node pkg="gmapping" name="slam_gmapping" type="slam_gmapping" args="scan:=base_scan" output="screen">
+	<node pkg="gmapping" name="slam_gmapping" type="slam_gmapping" args="scan:=base_scan">
 	
 		<remap from="scan" to="/buggy/scan"/>
 		<remap from="odom" to="/buggy/odom"/>
+		<remap from="clock" to="/buggy/clock"/>
+		<remap from="map" to="/gmapping/map"/>
 		<param name="delta" value=""/>
-		<param name="map_update_interval" value="0.5"/>
+		<param name="map_update_interval" value="1"/>
 
 	</node>
+	<node name="rviz_gmapping" pkg="rviz" type="rviz" args="-d /home/paul/SLAM/gmapping/gmapping.rviz" />
 
 </launch>
